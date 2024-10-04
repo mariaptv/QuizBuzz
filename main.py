@@ -1,3 +1,5 @@
+
+
 from QuizBuzz.quiz_brain import QuizBrain
 from question_model import Question
 from data import question_data
@@ -5,8 +7,10 @@ from data import question_data
 question_bank = []
 
 for i in question_data:
-    qa = Question(i.get("text"), i.get("answer"))
-    question_bank.append(qa)
+    question_text = Question["question"]
+    question_answer = question["correct_answer"]
+    new_question = Question(question_text, question_answer)
+    question_bank.append(new_question)
 
 quiz = QuizBrain(question_bank)
 
